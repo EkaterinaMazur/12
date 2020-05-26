@@ -20,7 +20,7 @@ const OnlyAnonymousRoute = ({ component: Component, ...rest }) => {
       <Redirect to={{ pathname: '/' }} />
     ) : (
       <Component {...props} />
-    )
+      )
   return <Route {...rest} render={func} />
 }
 
@@ -31,10 +31,10 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
     ) : (
       <Redirect
         to={{
-          pathname: '/login'
-        }}
+            pathname: '/login'
+          }}
       />
-    )
+      )
   return <Route {...rest} render={func} />
 }
 
@@ -83,8 +83,8 @@ export default (props) => {
         <StartupConnected>
           <Switch>
             <Route exact path="/" component={() => <DummyView />} />
-            <Route exact path="/dashboard" component={() => <Home />} />
-            <Route exact path="/dashboard/*" component={() => <Home />} />  
+            <Route exact path="/:userName" component={() => <Home />} />
+            <Route exact path="/:userName/:repositoryName" component={() => <Home />} />
             <PrivateRouteConnected exact path="/hidden-route" component={() => <DummyView />} />
             <Route component={() => <NotFound />} />
           </Switch>

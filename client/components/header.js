@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 
-const Header = () => {
+const Header = (props) => {
   const [toggled, toggle] = useState(false)
-
   return (
     <nav className="flex items-center justify-between flex-wrap bg-teal-500 p-6">
       <div className="flex items-center flex-shrink-0 text-white mr-6">
@@ -23,6 +23,12 @@ const Header = () => {
         >
           Tailwind CSS
         </button>
+      </div>
+      <div> Name of Repository: {props.userName}
+      </div>
+      <div>
+        <Link to='/'> Go To Main</Link>
+        <Link to={`/${props.userName}`}> Go to reps</Link>
       </div>
       {toggled && (
         <div id="menu" className="block">
