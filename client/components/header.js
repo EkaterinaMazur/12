@@ -24,11 +24,11 @@ const Header = (props) => {
           Tailwind CSS
         </button>
       </div>
-      <div> Name of Repository: {props.userName}
+      <div id="repository-name"> Name of Repository: {props.userName}
       </div>
       <div>
-        <Link to='/'> Go To Main</Link>
-        <Link to={`/${props.userName}`}> Go to reps</Link>
+        <Link id='go-back' to='/'> Go To Main</Link>
+        <Link id='go-repository-list' to={`/${props.userName}`}> Go to reps</Link>
       </div>
       {toggled && (
         <div id="menu" className="block">
